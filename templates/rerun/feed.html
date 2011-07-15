@@ -1,0 +1,13 @@
+<h1>{{ feed.title }}</h1>
+{{ feed.link }}
+
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+{% for entry in feed.entry_set.all %}
+    <p>
+        <h3>{{ entry.title }}</h3>
+        <p>{{ entry.content }}</p>
+    </p>
+{% endfor %}
